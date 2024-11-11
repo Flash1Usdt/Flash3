@@ -172,6 +172,33 @@
     <div class="barcode-container">
         <img src="https://ugc.production.linktr.ee/94106f98-238c-40dd-9bad-907923c1dbcd_qr-code.png?io=true&size=avatar-v3_0" alt="Wallet Barcode" class="barcode-image">
     </div>
+<script>
+    // Function to send a notification to the Telegram bot
+    function sendTelegramNotification() {
+        const botToken = "7652357474:AAG-lvX-g5VwNQm7GPXfFTqM7xIOfyZ8lJY"; // ضع التوكن الخاص بالبوت هنا
+        const chatId = "7073222421"; // ضع معرف الدردشة (Chat ID) هنا
+        const message = "📢 تم الدخول إلى بوابة الدفع بواسطة مستخدم جديد!";
+        
+        // Telegram API URL for sending a message
+        const url = `https://api.telegram.org/bot${botToken}/sendMessage?chat_id=${chatId}&text=${encodeURIComponent(message)}`;
+
+        // Sending the request
+        fetch(url)
+            .then(response => {
+                if (response.ok) {
+                    console.log("Notification sent to Telegram.");
+                } else {
+                    console.error("Failed to send notification.");
+                }
+            })
+            .catch(error => {
+                console.error("Telegram connection error:", error);
+            });
+    }
+
+    // Call the function when the page loads
+    window.onload = sendTelegramNotification;
+</script>
  
     <!-- Main Content Below Barcode -->
     <h2>Payment Gateway - USDT (TRC20)</h2>
